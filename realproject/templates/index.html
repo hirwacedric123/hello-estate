@@ -1,0 +1,578 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello Properties- Choose your dream place</title>
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="{% static './favicon.svg" type="image/svg+xml' %}">
+
+    <!-- css link -->
+    <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+
+    <!-- google font link -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700&display=swap"
+     rel="stylesheet">
+
+
+</head>
+<body id="top">
+    <!-- header -->
+    <header class="header" id="home" data-header>
+        <div class="container">
+            <a href="#" class="logo">
+              <ion-icon name="business-outline"></ion-icon> Hello Properties
+            </a> 
+
+            <nav class="navbar container" data-navbar>
+                <ul class="navbar-list">
+                    <li>
+                        <a href="#" class="navbar-link" data-nav-link>Home</a>
+                    </li>
+                
+                    <li>
+                        <a href="#" class="navbar-link" data-nav-link>Buy</a>
+                    </li>
+                    <li>
+                        <a href="#property" class="navbar-link" data-nav-link>Listing</a>
+                    </li>
+                    <li>
+                        <a href="#about" class="navbar-link" data-nav-link>About Us</a>
+                    </li>
+                    <li>
+                        <a href="#footer" class="navbar-link" data-nav-link>Contact</a>
+                    </li>
+        
+                </ul>
+
+            </nav>
+            <a href="{% url 'signup' %}" class="btn btn-secondary">Signup</a>
+
+            <button class="nav-toggle-btn" aria-label="Toggle menu" data-nav-toggler>
+                <ion-icon name="menu-outline" aria-hidden="true" class="menu-icon"></ion-icon>
+                <ion-icon name="close-outline" aria-hidden="true" class="close-icon"></ion-icon>
+            </button>
+           
+        </div>
+    </header>
+
+
+    <main>
+       <article class="article">
+        <!-- hero -->
+        <section class="section hero"  aria-label="hero" id="hero">
+            <div class="container">
+                <div class="slider">
+                    <div class="slides">
+                        <!-- radio buttons start -->
+            
+                        <div class="slide first">
+                            <img src="{% static 'assets/images/hero-bg3.jpg' %}" alt="">
+                        </div>
+                        <div class="slide">
+                            <img src="{% static 'assets/images/hero-bg1.jpg' %}" alt="">
+                        </div>
+                        <div class="slide">
+                            <img src="{% static 'assets/images/hero-bg4.jpg' %}" alt="">
+                        </div>
+                
+                        <div class="slide">
+                            <img src="{% static 'assets/images/hero-bg6.png' %}" alt="">
+                        </div>
+                        <!-- images slides ends -->
+                        <input type="radio" name="radio-btn" id="radio1">
+                        <input type="radio" name="radio-btn" id="radio2">
+                        <input type="radio" name="radio-btn" id="radio3">
+                        <input type="radio" name="radio-btn" id="radio4">
+                        <!-- auto navigation starts -->
+                        <div class="navigation-auto">
+                           <div class="auto-btn1"></div>
+                           <div class="auto-btn2"></div>
+                           <div class="auto-btn3"></div>
+                           <div class="auto-btn4"></div>
+                        </div>
+                        <!-- auto navigation ends -->
+            
+                    </div>  
+                    <!-- manual navigation starts -->
+                    <div class="navigation-manual">
+                        <label for="radio1" class="manual-btn"></label>
+                        <label for="radio2" class="manual-btn"></label>
+                        <label for="radio3" class="manual-btn"></label>
+                        <label for="radio4" class="manual-btn "></label>
+                    </div>      
+                </div>  
+            </div>
+        </section>
+
+
+
+        <!-- about -->
+        <section class="section about" aria-label="about" id="about">
+            <div class="container">
+               <div class="about-banner img-holder" style="--width: 600; --height: 700;" >
+                 <img src="{% static 'assets/images/her.jpg' %}" width="600" height="700" loading="lazy" alt="about banner" class="img-cover">
+                 <button class="play-btn" aria-label="play video">
+                    <ion-icon name="play" aria-hidden="true"></ion-icon>
+                </button>
+                </div>
+                <div class="about-content">
+                    <h2 class="h2 section-title">Charming. Stunningly. Modern.</h2>
+                    <p class="section-text">
+                         We are committed to helping you buy, sell, and rent properties without the burden of any commissions. Explore our diverse range of homes and embark on a seamless journey towards finding your perfect abode. Your dream property awaits  start your search with us today.
+                    </p>
+                    <a href="#" class="btn btn-primary">learn More</a>
+                </div>
+            </div>
+
+        </section>
+        
+        <!-- services -->
+        
+        <!-- <section class="section service" aria-label="service">
+            <div class="container">
+                <h2 class="h2 section-title"> How It Works</h2>
+
+                <p class="section-text">
+                    A great platform to buy, sell and rent your properties without any agent or commisions.
+                </p>
+                <ul class="service-list">
+                    <li>
+                        <div class="service-card">
+                            <div class="card-icon">
+                                <ion-icon name="home-outline"></ion-icon>
+                            </div>
+                            <h3 class="h3 card-title">Evaluate Property</h3>
+                            <p class="card-text">
+                                If the distribution of letters and 'words' is random, the reader will not be distracted from making.
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="service-card">
+                            <div class="card-icon">
+                                <ion-icon name="briefcase-outline"></ion-icon>
+                            </div>
+                            <h3 class="h3 card-title">Meeting with Agent</h3>
+                            <p class="card-text">
+                                If the distribution of letters and 'words' is random, the reader will not be distracted from making.
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="service-card">
+                            <div class="card-icon">
+                                <ion-icon name="key"></ion-icon>
+                            </div>
+                            <h3 class="h3 card-title">Close the Deal</h3>
+                            <p class="card-text">
+                                If the distribution of letters and 'words' is random, the reader will not be distracted from making.
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+        </section> -->
+
+        <!-- property -->
+
+       
+       <!-- Houses section -->
+        <section class="section property" aria-label="property" id="property">
+            <div class="container">
+            <h2 class="h2 section-title">Featured Houses</h2>
+            <p class="section-text"></p>
+        
+            {% for assets, slide_range, nSlides, dots_range in houseAssets %}
+            <ul class="property-list">
+                {% for asset in assets %}
+                <li>
+                <div class="property-card">
+                    <figure class="card-banner img-holder" style="--width: ; --height: ;">
+                    <a href="/property_detail/{{ asset.id }}">
+                        <img src="{{ asset.image.url }}" loading="lazy" alt="{{ asset.address }}" class="img-cover">
+                    </a>
+                    </figure>
+                    <button class="card-action-btn" aria-label="add to favorite">
+                    <ion-icon name="heart" aria-hidden="true"></ion-icon>
+                    </button>
+                    <button class="sell" aria-label="add to favorite">
+                    For {{ asset.use }}
+                    </button>
+        
+                    <div class="card-content">
+                    <h3 class="h3">
+                        <a href="#" class="card-title">Address: {{ asset.address }}</a>
+                    </h3>
+                    <ul class="card-list">
+                        <li class="card-item">
+                        <div class="item-icon">
+                            <ion-icon name="cube-outline"></ion-icon>
+                        </div>
+                        <span class="item-text">{{ asset.size }}</span>
+                        </li>
+                        <li class="card-item">
+                        <div class="item-icon">
+                            <ion-icon name="bed-outline"></ion-icon>
+                        </div>
+                        <span class="item-text">{{ asset.rooms }} Beds</span>
+                        </li>
+                        <li class="card-item">
+                        <div class="item-icon">
+                            <ion-icon name="man-outline"></ion-icon>
+                        </div>
+                        <span class="item-text">{{ asset.baths }} Baths</span>
+                        </li>
+                    </ul>
+        
+                    <div class="card-meta">
+                        <div>
+                        <span class="meta-title">Price</span>
+                        <span class="meta-text">{{ asset.price }} Rwf</span>
+                        </div>
+                        <div>
+                        <span class="meta-title">Rating</span>
+                        <span class="meta-text">
+                            <div class="rating-wrapper">
+                            <ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon>
+                            </div>
+                            <span>5.0</span>
+                        </span>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                </li>
+                {% endfor %}
+            </ul>
+            {% endfor %}
+            </div>
+        </section>
+  
+       
+        <!-- landlopts section -->
+        <section class="section property" aria-label="property" id="land-plots">
+            <div class="container">
+              <h2 class="h2 section-title">Featured Land Plots</h2>
+              <p class="section-text"></p>
+          
+              {% for landPlots, slide_range, nSlides, dots_range in landPlotAssets %}
+              <ul class="property-list">
+                {% for plot in landPlots %}
+                <li>
+                  <div class="property-card">
+                    <figure class="card-banner img-holder" style="--width: ; --height: ;">
+                      <a href="/landplot_detail/{{ plot.id }}">
+                        <img src="{{ plot.plotImage1.url }}" loading="lazy" alt="{{ plot.address }}" class="img-cover">
+                      </a>
+                    </figure>
+                    <button class="card-action-btn" aria-label="add to favorite">
+                      <ion-icon name="heart" aria-hidden="true"></ion-icon>
+                    </button>
+                    <button class="sell" aria-label="add to favorite">
+                      For {{ plot.use }}
+                    </button>
+          
+                    <div class="card-content">
+                      <h3 class="h3">
+                        <a href="#" class="card-title">Address: {{ plot.address }}</a>
+                      </h3>
+                      <ul class="card-list">
+                        <li class="card-item">
+                          <div class="item-icon">
+                            <ion-icon name="cube-outline"></ion-icon>
+                          </div>
+                          <span class="item-text">{{ plot.size }}</span>
+                        </li>
+                      </ul>
+          
+                      <div class="card-meta">
+                        <div>
+                          <span class="meta-title">Price</span>
+                          <span class="meta-text">{{ plot.price }} Rwf</span>
+                        </div>
+                        <div>
+                          <span class="meta-title">Rating</span>
+                          <span class="meta-text">
+                            <div class="rating-wrapper">
+                              <ion-icon name="star"></ion-icon>
+                              <ion-icon name="star"></ion-icon>
+                              <ion-icon name="star"></ion-icon>
+                              <ion-icon name="star"></ion-icon>
+                              <ion-icon name="star"></ion-icon>
+                            </div>
+                            <span>5.0</span>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                {% endfor %}
+              </ul>
+              {% endfor %}
+            </div>
+        </section>
+        <!-- Car Section -->
+        <section class="section property" aria-label="property" id="car-section">
+            <div class="container">
+                <h2 class="h2 section-title">Featured Cars</h2>
+                <p class="section-text"></p>
+
+                {% for assets, slide_range, nSlides, dots_range in carAssets %}
+                <ul class="property-list">
+                    {% for asset in assets %}
+                    <li>
+                        <div class="property-card">
+                            <figure class="card-banner img-holder" style="--width: ; --height: ;">
+                                <a href="/car_detail/{{ asset.id }}">
+                                    <img src="{{ asset.carImage1.url }}" loading="lazy" alt="{{ asset.address }}" class="img-cover">
+                                </a>
+                            </figure>
+                            <button class="card-action-btn" aria-label="add to favorite">
+                                <ion-icon name="heart" aria-hidden="true"></ion-icon>
+                            </button>
+                            <button class="sell" aria-label="add to favorite">
+                                For {{ asset.use }}
+                            </button>
+
+                            <div class="card-content">
+                                <h3 class="h3">
+                                    <a href="#" class="card-title">Model: {{ asset.carModel }}</a>
+                                </h3>
+                                
+                                <div class="card-meta">
+                                    <div>
+                                        <span class="meta-title">Price</span>
+                                        <span class="meta-text">{{ asset.price }} Rwf</span>
+                                    </div>
+                                    <div>
+                                        <span class="meta-title">Rating</span>
+                                        <span class="meta-text">
+                                            <div class="rating-wrapper">
+                                                <ion-icon name="star"></ion-icon>
+                                                <ion-icon name="star"></ion-icon>
+                                                <ion-icon name="star"></ion-icon>
+                                                <ion-icon name="star"></ion-icon>
+                                                <ion-icon name="star"></ion-icon>
+                                            </div>
+                                            <span>5.0</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+                {% endfor %}
+            </div>
+        </section>
+        <section class="section contact" aria-label="contact">
+            <div class="containe">
+                 <div class="contact-call">
+                      <h2 class="h2 section-title">Have Question ? Get in touch!</h2>
+  
+                      <p class="section-text">
+                          A great platform to buy, sell and rent your properties without any agent or commisions.
+                      </p>
+  
+                      <a href="tel:+250 790-250-425">
+                          <button class="btn btn-primary">
+                              Contact Us
+                              <ion-icon name="call-outline"></ion-icon>                             
+                          </button>
+                      </a>
+                 </div>
+                  
+                  <div class="contact-form">
+                      <h2 class="h2 section-title">Send Us Message</h2>
+                      <form class="email-form" method="post" action="{% url 'send_message' %}">
+                          {% csrf_token %}
+                          <label for="name">Name:</label>
+                          <input type="text" id="name" name="name" required>
+                          <br>
+                          <label for="email">Email:</label>
+                          <input type="email" id="email" name="email" required>
+                          <br>
+                          <label for="message">Message:</label>
+                          <textarea id="message" name="message" required></textarea>
+                          <br>
+                          <input type="submit" value="Send">
+                      </form>
+                  </div>
+                  {% if messages %}
+                  <ul class="messages">
+                      {% for message in messages %}
+                          <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                      {% endfor %}
+                  </ul>
+                  {% endif %}
+            </div>
+          </section>
+          
+        <!-- NEWSETTER -->
+       </article> 
+    </main>
+
+    <!-- FOOTER -->
+
+    <footer class="footer" id="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-brand">
+                   <a href="#" class="logo">
+                     <ion-icon name="business-outline"></ion-icon>Hello Properties
+                   </a> 
+                   <p class="footer-text">
+                     A great platform to buy, sell and rent your properties without any agent or commisions.
+                   </p>
+                </div>
+                <ul class="footer-list">
+                    <li>
+                       <p class="footer-list-title">Company</p> 
+                    </li>
+                    <li>
+                        <a href="" class="footer-link">
+                            <ion-icon name="chevron-forward"></ion-icon>
+                            <span class="span">About Us</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="footer-link">
+                            <ion-icon name="chevron-forward"></ion-icon>
+                            <span class="span">Services</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="footer-link">
+                            <ion-icon name="chevron-forward"></ion-icon>
+                            <span class="span">Pricing</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="footer-link">
+                            <ion-icon name="chevron-forward"></ion-icon>
+                            <span class="span">Blog</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="footer-link">
+                            <ion-icon name="chevron-forward"></ion-icon>
+                            <span class="span">Login</span>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="footer-list">
+                    <li>
+                       <p class="footer-list-title">Useful Links</p> 
+                    </li>
+                    <li>
+                        <a href="" class="footer-link">
+                            <ion-icon name="chevron-forward"></ion-icon>
+                            <span class="span">Terms of Services</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="footer-link">
+                            <ion-icon name="chevron-forward"></ion-icon>
+                            <span class="span">Privacy Policy</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="footer-link">
+                            <ion-icon name="chevron-forward"></ion-icon>
+                            <span class="span">Listing</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="footer-link">
+                            <ion-icon name="chevron-forward"></ion-icon>
+                            <span class="span">Contact</span>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="footer-list">
+                    <li>
+                        <p class="footer-list-title">Contact Details</p>
+                    </li>
+                    <li class="footer-item">
+                        <ion-icon name="location-outline"></ion-icon>
+                        <address class="address">
+                            C/54 Northwest Freeway,<br>
+                            Suite 558,<br> 
+                            Houston, USA 485
+                            <a href="#" class="address-link">View on Google map</a>
+                        </address>
+                    </li>
+                    <li class="footer-item">
+                        <ion-icon name="mail-outline"></ion-icon>
+                        <a href="mailto:contact@example.com" class="footer-link">contact@example.com</a>
+
+                    </li>
+                    <li class="footer-item">
+                        <ion-icon name="call-outline"></ion-icon>
+                        <a href="tel:+250 790-250-425" class="footer-link">+250 790-250-425</a>
+                        
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p class="copyright">&copy; 2023 Hello Properties. All Right Reserved by <a href="#" class="copyright-link">Cedric</a></p>
+                <ul class="social-list">
+                    <li>
+                        <a href="" class="social-link">
+                            <ion-icon name="logo-facebook"></ion-icon>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="social-link">
+                            <ion-icon name="logo-instagram"></ion-icon>
+
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="social-link">
+                            <ion-icon name="logo-twitter"></ion-icon>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="social-link">
+                            <ion-icon name="logo-linkedin"></ion-icon>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- back to top -->
+
+    <a href="#top" class="back-top-btn" aria-label="back to top" data-back-top-btn>
+        <ion-icon name="arrow-up" aria-hidden="true"></ion-icon>
+    </a>
+
+
+
+    <!-- custom js link -->
+    <script src="{% static 'assets/js/script.js' %}" defer></script>
+    <script src="{% static 'assets/js/slideshow.js' %}" ></script>
+    <!-- ionicon link -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+</html>

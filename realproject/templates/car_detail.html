@@ -1,0 +1,113 @@
+{% load static %}
+{% include 'navbar.html' %}
+
+{% block content %}
+<div class="container">
+  <div class="img-content" style="display: grid; text-align: center;">
+    <h2 style="color: black;">Car For {{ object.use }} - {{ object.carModel }}</h2><br><br>
+  </div>
+  <h2 style="color: darkslategrey;">Description:</h2><br> &nbsp;&nbsp;&nbsp; {{ object.MoreDescription }}<br><br>
+  <div class="img-container" style="display: grid; position: relative;">
+    <br><div id="slideshow">
+      <img src="/media/{{ object.carImage1 }}" loading="lazy" alt="{{ object.address }}"  class="img-cover">
+      <img src="/media/{{ object.carImage2 }}" loading="lazy" alt="{{ object.address }}"  class="img-cover">
+      <img src="/media/{{ object.carImage3 }}" loading="lazy" alt="{{ object.address }}"  class="img-cover">
+    </div>
+    <div class="slideshow-buttons">
+      <button class="slide-left-button" onclick="changeSlide(-1)">&lt;</button>
+      <button class="slide-right-button" onclick="changeSlide(1)">&gt;</button>
+    </div>
+  </div>
+</div><br><br>
+
+<style>
+  .img-cover {
+    max-width: 70%;
+    max-height: 100%;
+    
+  }
+  .img-container {
+  position: relative;
+  }
+
+  .slide-left-button,
+  .slide-right-button {
+    font-size: 24px;
+    padding: 3px 8px;
+    background-color: hsl(142, 76%, 36%);
+    border: none;
+    cursor: pointer;
+    color: white;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 5px;
+  }
+
+  .slide-left-button {
+    left: 2%;
+  }
+
+  .slide-right-button {
+    right: 32%;
+  }
+  @keyframes vibrate {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-2px); }
+  50% { transform: translateX(0); }
+  75% { transform: translateX(2px); }
+  100% { transform: translateX(0); }
+  }
+
+  /* Apply the animation to the buttons */
+  .slide-left-button,
+  .slide-right-button {
+    animation: vibrate 0.7s ease infinite;
+  }
+
+  /* Media queries for further adjustments */
+  @media (max-width: 768px) {
+    .slide-left-button,
+    .slide-right-button {
+      font-size: 20px;
+      padding: 3px 7px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .slide-left-button,
+    .slide-right-button {
+      font-size: 18px;
+    }
+  }
+</style>
+
+<script>
+  var slideIndex = 0;
+  showSlide(slideIndex);
+
+  function showSlide(n) {
+    var i;
+    var slides = document.getElementById("slideshow").getElementsByTagName("img");
+
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+
+    if (n >= slides.length) {
+      slideIndex = 0;
+    } else if (n < 0) {
+      slideIndex = slides.length - 1;
+    } else {
+      slideIndex = n;
+    }
+
+    slides[slideIndex].style.display = "block";
+  }
+
+  function changeSlide(n) {
+    showSlide(slideIndex + n);
+  }
+</script>
+{% include 'includes/footer.html' %}
+{% endblock content %}

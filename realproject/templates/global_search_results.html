@@ -1,0 +1,191 @@
+
+{% load static %}
+{% include 'navbar.html' %}
+{% load custom_filters %}
+
+{% block content %}
+    <section class="section search-results" aria-label="search-results">
+        <div class="container">
+            {% if query %}
+                <h2 class="h2 section-title">Search Results for "{{ query }}"</h2>
+                {% if results %}
+                    <ul class="property-list">
+                        {% for item in results %}
+                            {% if item|get_class_name == 'House' %}
+                            <li>
+                                <div class="property-card">
+                                    <figure class="card-banner img-holder" style="--width: ; --height: ;">
+                                    <a href="/property_detail/{{ item.id }}">
+                                        <img src="{{ item.image.url }}" loading="lazy" alt="{{ item.address }}" class="img-cover">
+                                    </a>
+                                    </figure>
+                                    <button class="card-action-btn" aria-label="add to favorite">
+                                    <ion-icon name="heart" aria-hidden="true"></ion-icon>
+                                    </button>
+                                    <button class="sell" aria-label="add to favorite">
+                                    For {{ item.use }}
+                                    </button>
+                        
+                                    <div class="card-content">
+                                    <h3 class="h3">
+                                        <a href="#" class="card-title">Address: {{ item.address }}</a>
+                                    </h3>
+                                    <ul class="card-list">
+                                        <li class="card-item">
+                                        <div class="item-icon">
+                                            <ion-icon name="cube-outline"></ion-icon>
+                                        </div>
+                                        <span class="item-text">{{ item.size }}</span>
+                                        </li>
+                                        <li class="card-item">
+                                        <div class="item-icon">
+                                            <ion-icon name="bed-outline"></ion-icon>
+                                        </div>
+                                        <span class="item-text">{{ item.rooms }} Beds</span>
+                                        </li>
+                                        <li class="card-item">
+                                        <div class="item-icon">
+                                            <ion-icon name="man-outline"></ion-icon>
+                                        </div>
+                                        <span class="item-text">{{ item.baths }} Baths</span>
+                                        </li>
+                                    </ul>
+                        
+                                    <div class="card-meta">
+                                        <div>
+                                        <span class="meta-title">Price</span>
+                                        <span class="meta-text">{{ item.price }} Rwf</span>
+                                        </div>
+                                        <div>
+                                        <span class="meta-title">Rating</span>
+                                        <span class="meta-text">
+                                            <div class="rating-wrapper">
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                            </div>
+                                            <span>5.0</span>
+                                        </span>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+                            </li>
+                            {% elif item|get_class_name == 'LandPlot' %}
+                            <li>
+                                <div class="property-card">
+                                  <figure class="card-banner img-holder" style="--width: ; --height: ;">
+                                    <a href="/landplot_detail/{{ plot.id }}">
+                                      <img src="{{ plot.plotImage1.url }}" loading="lazy" alt="{{ plot.address }}" class="img-cover">
+                                    </a>
+                                  </figure>
+                                  <button class="card-action-btn" aria-label="add to favorite">
+                                    <ion-icon name="heart" aria-hidden="true"></ion-icon>
+                                  </button>
+                                  <button class="sell" aria-label="add to favorite">
+                                    For {{ plot.use }}
+                                  </button>
+                        
+                                  <div class="card-content">
+                                    <h3 class="h3">
+                                      <a href="#" class="card-title">Address: {{ plot.address }}</a>
+                                    </h3>
+                                    <ul class="card-list">
+                                      <li class="card-item">
+                                        <div class="item-icon">
+                                          <ion-icon name="cube-outline"></ion-icon>
+                                        </div>
+                                        <span class="item-text">{{ plot.size }}</span>
+                                      </li>
+                                    </ul>
+                        
+                                    <div class="card-meta">
+                                      <div>
+                                        <span class="meta-title">Price</span>
+                                        <span class="meta-text">{{ plot.price }} Rwf</span>
+                                      </div>
+                                      <div>
+                                        <span class="meta-title">Rating</span>
+                                        <span class="meta-text">
+                                          <div class="rating-wrapper">
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                          </div>
+                                          <span>5.0</span>
+                                        </span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </li>
+                            {% elif item|get_class_name == 'Car' %}
+                            <li>
+                                <div class="property-card">
+                                    <figure class="card-banner img-holder" style="--width: ; --height: ;">
+                                        <a href="/car_detail/{{ item.id }}">
+                                            <img src="{{ item.carImage1.url }}" loading="lazy" alt="{{ item.address }}" class="img-cover">
+                                        </a>
+                                    </figure>
+                                    <button class="card-action-btn" aria-label="add to favorite">
+                                        <ion-icon name="heart" aria-hidden="true"></ion-icon>
+                                    </button>
+                                    <button class="sell" aria-label="add to favorite">
+                                        For {{ item.use }}
+                                    </button>
+        
+                                    <div class="card-content">
+                                        <h3 class="h3">
+                                            <a href="#" class="card-title">Model: {{ item.carModel }}</a>
+                                        </h3>
+                                        <!-- Additional car details can be added here -->
+                                        <!-- Example:
+                                        <ul class="card-list">
+                                            <li class="card-item">
+                                                <div class="item-icon">
+                                                    <ion-icon name="cube-outline"></ion-icon>
+                                                </div>
+                                                <span class="item-text">{{ item.size }}</span>
+                                            </li>
+                                        </ul>
+                                        -->
+        
+                                        <div class="card-meta">
+                                            <div>
+                                                <span class="meta-title">Price</span>
+                                                <span class="meta-text">{{ item.price }} Rwf</span>
+                                            </div>
+                                            <div>
+                                                <span class="meta-title">Rating</span>
+                                                <span class="meta-text">
+                                                    <div class="rating-wrapper">
+                                                        <ion-icon name="star"></ion-icon>
+                                                        <ion-icon name="star"></ion-icon>
+                                                        <ion-icon name="star"></ion-icon>
+                                                        <ion-icon name="star"></ion-icon>
+                                                        <ion-icon name="star"></ion-icon>
+                                                    </div>
+                                                    <span>5.0</span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    <p>No results found.</p>
+                {% endif %}
+            {% else %}
+                <p>Please enter a search query.</p>
+            {% endif %}
+        </div>
+    </section>
+    {% include 'includes/footer.html' %}
+{% endblock %}
